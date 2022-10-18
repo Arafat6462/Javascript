@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Facebook API</title>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook API</title>
+  </head>
+  <body>
 
 
-        <script>
+    <!-- <script>
             window.fbAsyncInit = function() {
               FB.init({
                 appId            : '109056785312256',
@@ -20,37 +20,34 @@
             };
           </script>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-             
+              -->
+    <div style="display: flex; margin: 1em; font-size: 24px;">
+      <label>Select post type and Soruce: </label>
+      <select style="font-size: 20px;" id="post_type_source">
+        <option value="text">Text</option>
+        <option value="online_image">Online Image</option>
+        <option value="online_video">Online Video</option>
+        <option value="local_image">Local Image</option>
+        <option value="local_video">Local Video</option>
+      </select>
+    </div>
+
+
+    <textarea id="text" cols="30" rows="10" placeholder="write your post here"></textarea>
+    <textarea id="online_image" cols="30" rows="10" placeholder="Enter your image link"></textarea>
+    <textarea id="online_video" cols="30" rows="10" placeholder="Enter your video link"></textarea>
+    <textarea id="token" cols="30" rows="10" placeholder="Enter your Token"></textarea>
+    <input type="file" id="file">
+    <button onclick="postData()">Post</button>
+    <p id="post_status"></p>
 
 
 
-        <div style="display: flex; margin: 1em; font-size: 24px;">
-            <label>Select post type : </label>
-
-            <select style="font-size: 20px;" id="post_type">
-                <option value="text">Text</option>
-                <option value="image">Image</option>
-                <option value="video">Video</option>
-            </select>
-        </div>
-
-
-        <textarea id="text" cols="30" rows="10" placeholder="write your post here"></textarea>
-        <textarea id="image" cols="30" rows="10" placeholder="Enter your image link"></textarea>
-        <textarea id="video" cols="30" rows="10" placeholder="Enter your video link"></textarea>
-        <textarea id="token" cols="30" rows="10" placeholder="Enter your Token"></textarea>
-        <button onclick="postData()">Post</button>
-        <p id="post_status"></p>
+    <button onclick="getData()">Get all Post</button>
+    <p id="feed"></p>
 
 
 
-        <button onclick="getData()">Get all Post</button>
-        <p id="feed"></p>
-
-
-
-        <script src="./async.js"></script>
-    </body>
+    <script src="./async.js"></script>
+  </body>
 </html>
-
- 
